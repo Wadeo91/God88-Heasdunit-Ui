@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Head Unit UI • Windows 11 Style</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="head-unit">
+      <aside class="rail glass" aria-label="Primary navigation">
+        <div class="logo">⊞</div>
+        <button class="rail-btn active" data-view="home">Home</button>
+        <button class="rail-btn" data-view="maps">Maps</button>
+        <button class="rail-btn" data-view="media">Media</button>
+        <button class="rail-btn" data-view="calls">Calls</button>
+        <button class="rail-btn" data-view="settings">Settings</button>
+      </aside>
+
+      <section class="dashboard">
+        <header class="topbar glass">
+          <div>
+            <p class="eyebrow">Windows 11 Vehicle Shell</p>
+            <h1 id="viewTitle">Home Dashboard</h1>
+          </div>
+          <div class="status">
+            <span id="clock">--:--</span>
+            <span>📶 5G</span>
+            <span>🔋 82%</span>
+          </div>
+        </header>
+
+        <section id="home" class="view active-view" aria-label="Home dashboard">
+          <div class="grid">
+            <article class="card glass map-card">
+              <h2>Navigation</h2>
+              <p>Destination: Downtown Seattle</p>
+              <p>ETA: 24 min • Traffic: Moderate</p>
+              <button class="primary">Start Route</button>
+            </article>
+
+            <article class="card glass media-card">
+              <h2>Now Playing</h2>
+              <p id="track">Midnight City — M83</p>
+              <div class="media-controls">
+                <button id="prev" aria-label="Previous track">⏮</button>
+                <button id="play" aria-label="Play or pause">⏸</button>
+                <button id="next" aria-label="Next track">⏭</button>
+              </div>
+            </article>
+
+            <article class="card glass quick-card">
+              <h2>Quick Actions</h2>
+              <div class="chips">
+                <button>Defrost</button>
+                <button>Parking Cam</button>
+                <button>Voice Assist</button>
+                <button>Night Mode</button>
+              </div>
+            </article>
+
+            <article class="card glass climate-card">
+              <h2>Climate</h2>
+              <div class="temp-row">
+                <button id="tempDown" aria-label="Decrease temperature">−</button>
+                <span><strong id="tempValue">70</strong> °F</span>
+                <button id="tempUp" aria-label="Increase temperature">+</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="maps" class="view" aria-label="Maps view">
+          <article class="card glass full-card">
+            <h2>Map Overview</h2>
+            <p>Next turn: Pine St in 1.2 mi • Route guidance ready.</p>
+            <div class="placeholder">🗺️ Full-screen map canvas placeholder</div>
+          </article>
+        </section>
+
+        <section id="media" class="view" aria-label="Media view">
+          <article class="card glass full-card">
+            <h2>Media Library</h2>
+            <ul class="list" id="playlistView"></ul>
+          </article>
+        </section>
+
+        <section id="calls" class="view" aria-label="Calls view">
+          <article class="card glass full-card">
+            <h2>Recent Calls</h2>
+            <ul class="list">
+              <li>Alex — 3 min ago</li>
+              <li>Office — 18 min ago</li>
+              <li>Sam — Yesterday</li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="settings" class="view" aria-label="Settings view">
+          <article class="card glass full-card">
+            <h2>Vehicle Settings</h2>
+            <div class="chips">
+              <button>Drive Modes</button>
+              <button>Display Brightness</button>
+              <button>Audio EQ</button>
+              <button>System Update</button>
+            </div>
+          </article>
+        </section>
+
+        <footer class="dock glass">
+          <button id="startBtn">⊞ Start</button>
+          <button>Widgets</button>
+          <button>Bluetooth</button>
+          <button>Car Settings</button>
+        </footer>
+
+        <section id="startPanel" class="start-panel glass" aria-label="Start menu" hidden>
+          <h3>Pinned</h3>
+          <div class="chips">
+            <button>Maps</button>
+            <button>Phone</button>
+            <button>Music</button>
+            <button>Vehicle</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
