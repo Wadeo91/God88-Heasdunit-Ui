@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Android Head Unit UI + OPTMN8 DSP</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="head-unit-shell">
+      <header class="status-bar">
+        <span id="clock">--:--</span>
+        <div class="status-icons">
+          <span>📡 LTE</span>
+          <span>📍 GPS</span>
+          <span>🔋 79%</span>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <aside class="app-rail">
+          <button class="rail-app active" data-view="home">🏠 Home</button>
+          <button class="rail-app" data-view="maps">🗺️ Maps</button>
+          <button class="rail-app" data-view="media">🎵 Music</button>
+          <button class="rail-app" data-view="dsp">🎚 OPTMN8 DSP</button>
+          <button class="rail-app" data-view="calls">📞 Calls</button>
+          <button class="rail-app" data-view="settings">⚙️ Settings</button>
+        </aside>
+
+        <section class="screen" aria-live="polite">
+          <div class="screen-header">
+            <h1 id="viewTitle">Android Dashboard</h1>
+            <p>Vehicle OS 1.0</p>
+          </div>
+
+          <section id="home" class="view active-view">
+            <div class="app-grid">
+              <button class="tile" data-view="maps">Navigation</button>
+              <button class="tile" data-view="media">Music</button>
+              <button class="tile" data-view="dsp">OPTMN8 DSP</button>
+              <button class="tile" data-view="calls">Phone</button>
+              <button class="tile" data-view="settings">Car Control</button>
+              <button class="tile">Camera</button>
+            </div>
+
+            <div class="split-row">
+              <article class="card">
+                <h2>Now Playing</h2>
+                <p id="track">Midnight City — M83</p>
+                <div class="controls">
+                  <button id="prev">⏮</button>
+                  <button id="play">⏸</button>
+                  <button id="next">⏭</button>
+                </div>
+              </article>
+
+              <article class="card">
+                <h2>Climate</h2>
+                <div class="temp-row">
+                  <button id="tempDown">−</button>
+                  <span><strong id="tempValue">70</strong> °F</span>
+                  <button id="tempUp">+</button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="maps" class="view">
+            <article class="card fill">
+              <h2>Navigation</h2>
+              <p>Next maneuver: Merge onto I‑5 N in 800 ft.</p>
+              <div class="map-placeholder">Live map panel</div>
+            </article>
+          </section>
+
+          <section id="media" class="view">
+            <article class="card fill">
+              <h2>Music Library</h2>
+              <ul id="playlistView" class="list"></ul>
+            </article>
+          </section>
+
+          <section id="dsp" class="view">
+            <article class="card fill">
+              <h2>OPTMN8 DSP</h2>
+              <p>Digital Sound Processor tuning.</p>
+              <div class="eq-grid">
+                <label>Bass <input type="range" id="bass" min="-12" max="12" value="3" /></label>
+                <label>Mid <input type="range" id="mid" min="-12" max="12" value="1" /></label>
+                <label>Treble <input type="range" id="treble" min="-12" max="12" value="4" /></label>
+                <label>Sub <input type="range" id="sub" min="-12" max="12" value="2" /></label>
+              </div>
+              <div class="chips">
+                <button class="preset" data-preset="flat">Flat</button>
+                <button class="preset" data-preset="driver">Driver Focus</button>
+                <button class="preset" data-preset="bass">Bass Boost</button>
+              </div>
+              <p id="dspReadout">Bass +3 • Mid +1 • Treble +4 • Sub +2</p>
+            </article>
+          </section>
+
+          <section id="calls" class="view">
+            <article class="card fill">
+              <h2>Recent Calls</h2>
+              <ul class="list">
+                <li>Mom — 2 mins ago</li>
+                <li>Office — 15 mins ago</li>
+                <li>Roadside Assist — Yesterday</li>
+              </ul>
+            </article>
+          </section>
+
+          <section id="settings" class="view">
+            <article class="card fill">
+              <h2>System Settings</h2>
+              <div class="chips">
+                <button>Display</button>
+                <button>Bluetooth</button>
+                <button>Hotspot</button>
+                <button>Vehicle</button>
+              </div>
+            </article>
+          </section>
+        </section>
+      </section>
+
+      <footer class="android-nav">
+        <button id="homeBtn">◯</button>
+        <button id="appsBtn">▢</button>
+        <button id="backBtn">◁</button>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
