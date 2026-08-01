@@ -1,0 +1,12 @@
+{
+  "name": "android-head-unit-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Android-style head unit UI prototype with OPTMN8 DSP",
+  "scripts": {
+    "screenshot": "node scripts/capture-screenshot.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.54.2"
+  }
+}
